@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import LandingPage from './LandingPage'
 import Navbar from './Navbar'
+import AddMovie from './AddMovie'
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <>
       <Navbar />
       <LandingPage />
+      <AddMovie />
     </>
   )
 }

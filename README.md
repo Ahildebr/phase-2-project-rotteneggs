@@ -1,7 +1,7 @@
 1/16/2025
- 1. figure out git stuff
- 2. make components
- 3. bare bones
+ 1. figure out git stuff......ehhh it works i guess 
+ <!-- 2. make components -->
+ <!-- 3. bare bones  -->
 
  1/17
  3. Route components
