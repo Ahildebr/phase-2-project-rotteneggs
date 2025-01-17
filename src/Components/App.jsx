@@ -15,6 +15,20 @@ function App() {
       .then(data => setMovies(data))
   }, [])
 
+  const handleAddMovie = (newMovie) => {
+    fetch("http://localhost:3000/movies",{
+      method: "POST",
+      headers: { "Content-Type": "Application/json"},
+      body: JSON.stringify(newMovie)})
+    
+  .then((response) => response.json())
+  .then((addedMovie) => {
+    setMovies((movies) => [...movies, addedMovie]);
+  })};
+
+
+
+
   console.log(movies)
 /*1st step "npm install react-router-dom@6.28.1"
 2nd step import browser router as router, routes, and route
@@ -31,7 +45,7 @@ go to navbar for next step*/
         <Route path="movie/movie-list" element={<MovieList movies={movies}/>} />
       </Routes>
       <Routes>
-        <Route path="/movie/new" element={<AddMovie movies={movies}/>} />
+        <Route path="/movie/new" element={<AddMovie handleAddMovie={handleAddMovie} movies={movies}/>} />
       </Routes>
     </Router>
   )
