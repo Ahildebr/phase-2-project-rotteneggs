@@ -1,7 +1,7 @@
-{   //<---Create an object with a key of "movies" 
-"movies": [   //<-Create an array FOR the "movie objects" to live in
+{   
+"movies": [   
     {
-        "id": 1,              //<-- Populate the array with the "movies" objects all the keys will be "movies.title"
+        "id": 1,              
         "title": "Rocky Horror Picture Show",
         "director": "Jim Sharman",
         "image": "https://m.media-amazon.com/images/M/MV5BOTg2YzY5ZGYtNDk1My00N2Q2LWFhN2YtZWU5YTkzODIyZGRmXkEyXkFqcGc@._V1_.jpg",

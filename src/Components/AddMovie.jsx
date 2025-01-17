@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AddMovie() {
+function AddMovie({ movies }) {
   return (
     <form>
       <label>
