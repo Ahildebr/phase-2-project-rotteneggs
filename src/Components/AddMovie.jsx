@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 function AddMovie({ handleAddMovie }) {
 const [formData, setFormData] = useState({
   image: "",
@@ -7,7 +8,9 @@ const [formData, setFormData] = useState({
   director: "",
   rating: "",
 })
-console.log(formData)
+
+
+
 const handleChange = (event) => {
   const {name, value} = event.target
   setFormData({...formData, [name]: value})
