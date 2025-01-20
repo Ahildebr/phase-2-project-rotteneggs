@@ -1,24 +1,21 @@
-import React, { useState } from 'react'
-
+import React, { useState } from 'react';
+import { TextField, Button, Container, Typography, Box } from '@mui/material';
 
 function AddMovie({ handleAddMovie }) {
-const [formData, setFormData] = useState({
-  image: "",
-  title: "",
-  director: "",
-  rating: "",
-})
+  const [formData, setFormData] = useState({
+    image: "",
+    title: "",
+    director: "",
+    rating: "",
+  });
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-
-const handleChange = (event) => {
-  const {name, value} = event.target
-  setFormData({...formData, [name]: value})
-}
-
-
-const handleSubmit = (event) => {
-  event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     const newMovie = {
       title: formData.title,
       image: formData.image,
@@ -27,46 +24,52 @@ const handleSubmit = (event) => {
     };
     handleAddMovie(newMovie);
     setFormData({ title: "", image: "", director: "", rating: "" });
-  }
-
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Image:
-        <input 
-        type="text" 
-        name="image"
-        value={formData.image}
-        onChange={handleChange} />
-      </label>
-      <label>
-        Title:
-        <input 
-        type="text" 
-        name="title"
-        value={formData.title} 
-        onChange={handleChange}/>
-      </label>
-      <label>
-        Director:
-        <input 
-        type="text" 
-        name="director" 
-        value={formData.director}
-        onChange={handleChange}/>
-      </label>
-      <label>
-        Rating:
-        <input 
-        type="text" 
-        name="rating"
-        value={formData.rating}
-        onChange={handleChange} />
-      </label>
-      <button type="submit">Add Movie</button>
-    </form>
-  )
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Add a New Movie
+      </Typography>
+      <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+        <TextField
+          label="Image"
+          name="image"
+          value={formData.image}
+          onChange={handleChange}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Title"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Director"
+          name="director"
+          value={formData.director}
+          onChange={handleChange}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="Rating"
+          name="rating"
+          value={formData.rating}
+          onChange={handleChange}
+          fullWidth
+          margin="normal"
+        />
+        <Button type="submit" variant="contained" color="primary" sx={{ mt: 2 }}>
+          Add Movie
+        </Button>
+      </Box>
+    </Container>
+  );
 }
 
-export default AddMovie
+export default AddMovie;
